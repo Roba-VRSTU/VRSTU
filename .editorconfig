@@ -1,0 +1,22 @@
+# 設定の詳細については，https://editorconfig.org を参考にすること．
+# 本ファイルにより下の階層を対象とする．
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.py]
+indent_size = 4
+quote_type = single
+
+[*.ts]
+quote_type =single
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
