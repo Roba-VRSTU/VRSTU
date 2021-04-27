@@ -1,0 +1,14 @@
+{
+  "autoDocstring.docstringFormat": "numpy",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true,
+    "source.organizeImports": false
+  },
+  "editor.formatOnSave": true,
+  "indentRainbow.ignoreErrorLanguages": ["python", "markdown"],
+  "tslint.configFile": "tslint.json",
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["vrstu"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.nosetestsEnabled": false
+}

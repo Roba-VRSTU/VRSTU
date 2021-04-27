@@ -1,0 +1,21 @@
+{
+  // ワークスペースの推奨設定周りについては，https://go.microsoft.com/fwlink/?LinkId=827846 を参考にすること．
+  // 拡張機能の識別子のフォーマット： ${publisher}.${name}
+  // 例： vscode.csharp
+
+  // 推奨拡張機能一覧
+  "recommendations": [
+    "almenon.arepl",
+    "batisteo.vscode-django",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "kevinrose.vsc-python-indent",
+    "littlefoxteam.vscode-python-test-adapter",
+    "ms-python.python",
+    "njpwerner.autodocstring",
+    "oderwat.indent-rainbow",
+    "visualstudioexptteam.vscodeintellicode"
+  ],
+  // 非推奨拡張機能一覧
+  "unwantedRecommendations": []
+}
