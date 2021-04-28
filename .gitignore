@@ -137,6 +137,9 @@ dmypy.json
 static/
 ui/static/vrstu/
 
+# Django
+migrations/
+
 # OS Environment
 .DS_Store
 Thumbs.db
