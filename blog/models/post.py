@@ -45,9 +45,11 @@ class Post(StatusSet, SEOSet):
         'いいね数',
         editable=False, default=0)
 
-    def get_categories(self):
+    # 所属された全てのカテゴリーをカンマ区切りの文字列で取得
+    def get_all_categories(self):
         return ','.join([category.name for category in self.categories.all()])
-    get_categories.short_description = 'カテゴリー'
+
+    get_all_categories.short_description = 'カテゴリー'
 
     class Meta:
         """メタデータ定義
@@ -59,5 +61,12 @@ class Post(StatusSet, SEOSet):
         verbose_name_plural = '投稿'
 
     def __str__(self):
-        # カテゴリー名を出力
+        """タイトル取得
+
+        Returns
+        -------
+        str
+            タイトル
+        """
+
         return self.title

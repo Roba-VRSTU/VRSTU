@@ -9,8 +9,8 @@ class StatusSet(models.Model):
 
     Parameters
     ----------
-    models : Model
-        Django モデル
+    models : models
+        models インターフェース
     """
 
     # 公開
@@ -36,8 +36,8 @@ class StatusSet(models.Model):
         auto_now=True)
     # 作成者
     author = models.ForeignKey(
-        User, verbose_name='作成者',
-        on_delete=models.CASCADE)
+        User, on_delete=models.CASCADE,
+        verbose_name='作成者')
 
     class Meta:
         """メタデータ定義

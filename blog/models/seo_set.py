@@ -6,8 +6,8 @@ class SEOSet(models.Model):
 
     Parameters
     ----------
-    models : Model
-        Django モデル
+    models : models
+        models インターフェース
     """
 
     # 別名

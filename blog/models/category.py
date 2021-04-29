@@ -21,14 +21,13 @@ class Category(StatusSet, SEOSet):
         カテゴリーオブジェクト
     """
 
-    # フィールドの定義
     # カテゴリー名
     name = models.CharField(
         'カテゴリー名',
         max_length=255)
     # 親カテゴリー
     parent = models.ForeignKey(
-        'self', on_delete=models.CASCADE, null=True,
+        'self', on_delete=models.CASCADE, null=True, blank=True,
         verbose_name='親カテゴリー',
         help_text='親カテゴリーの ID')
     # モード
@@ -47,5 +46,12 @@ class Category(StatusSet, SEOSet):
         verbose_name_plural = 'カテゴリー'
 
     def __str__(self):
-        # カテゴリー名を出力
+        """カテゴリー名取得
+
+        Returns
+        -------
+        str
+            カテゴリー名
+        """
+
         return self.name
