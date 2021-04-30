@@ -1,16 +1,18 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'vrstu/style.css' %}"
-    />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <title>VRSTU</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
   </head>
-  <body></body>
+  <body>
+    <app-root></app-root>
+    <script src="{% static 'runtime.js' %}" defer></script>
+    <script src="{% static 'polyfills.js' %}" defer></script>
+    <script src="{% static 'main.js' %}" defer></script>
+  </body>
 </html>
