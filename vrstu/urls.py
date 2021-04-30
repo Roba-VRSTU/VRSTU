@@ -14,12 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
 from vrstu.constants import API_BASE_URL
+from vrstu import views
 
 urlpatterns = [
-    path(API_BASE_URL + 'blog/', include('blog.urls')),
+    path('', views.index, name='index'),
     path(settings.ADMIN_URL + '/', admin.site.urls),
-]
+    path(API_BASE_URL + 'blog/', include('blog.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
