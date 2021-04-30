@@ -5,6 +5,9 @@
     "source.organizeImports": false
   },
   "editor.formatOnSave": true,
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
   "indentRainbow.ignoreErrorLanguages": ["python", "markdown"],
   "tslint.configFile": "tslint.json",
   "python.linting.flake8Enabled": true,
