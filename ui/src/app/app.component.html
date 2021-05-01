@@ -1,5 +1,2 @@
-App {{'lang' | translate}}
-<select #langSelect (change)="translate.use(langSelect.value)">
-  <option *ngFor="let lang of translate.getLangs()" [value]="lang"
-    [attr.selected]="lang === translate.currentLang ? '' : null">{{lang}}</option>
-</select>
+<!-- ルーティングによる画面遷移 -->
+<router-outlet></router-outlet>
