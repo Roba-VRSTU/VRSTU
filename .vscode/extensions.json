@@ -14,7 +14,8 @@
     "ms-python.python",
     "njpwerner.autodocstring",
     "oderwat.indent-rainbow",
-    "visualstudioexptteam.vscodeintellicode"
+    "visualstudioexptteam.vscodeintellicode",
+    "hookyqr.beautify"
   ],
   // 非推奨拡張機能一覧
   "unwantedRecommendations": []
