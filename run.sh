@@ -1,2 +1,2 @@
 cd ui
-ng serve --open
+ng serve --host 0.0.0.0 --open
