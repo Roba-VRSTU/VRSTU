@@ -5,8 +5,14 @@
 export const environment = {
   /** プロダクションモード */
   production: false,
+  /** サイト名 */
+  siteTitle: 'VRSTU',
+  /** サイト名補足情報 */
+  siteDescription: 'we are students',
   /** デフォルト言語 */
   defaultLang: 'ja',
+  /** コピーライト */
+  copyright: '2016 vrstu.net',
 }
 
 /*

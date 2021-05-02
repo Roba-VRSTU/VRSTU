@@ -1,1 +1,22 @@
-<p>footer works!</p>
+<footer>
+  <div class="container d-flex justify-content-between">
+    <span class="copyright">
+      &copy; {{env.copyright}}
+    </span>
+    <span>
+      <!-- 言語選択ドロップダウン -->
+      <div ngbDropdown>
+        <a class="btn btn-link" ngbDropdownToggle>
+          {{'lang.' + translate.currentLang | translate}}
+        </a>
+        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+          <ng-container *ngFor="let lang of translate.getLangs()">
+            <button (click)="onSwitchLang(lang)" ngbDropdownItem>
+              {{'lang.' + lang | translate}}
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </span>
+  </div>
+</footer>

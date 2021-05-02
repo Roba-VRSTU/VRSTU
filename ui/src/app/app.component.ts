@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,5 @@ import { TranslateService } from '@ngx-translate/core'
   styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  constructor(public translate: TranslateService) {}
+  constructor() {}
 }

@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+/* Bootstrap スタイルを上書き */
+.btn {
+  padding: 0.375rem 0.5rem;
+}
+
+.dropdown-menu {
+  min-width: 5rem;
+}
+
+.dropdown-item {
+  transition: all 0.3s;
+}
+
+.dropdown-item.hover,
+.dropdown-item:hover {
+  transition: all 0.3s;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: @color-black-100;
+}
