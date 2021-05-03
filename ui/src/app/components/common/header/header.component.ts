@@ -8,6 +8,7 @@ import { Constant } from 'src/constant'
   styleUrls: ['./header.component.less'],
 })
 export class HeaderComponent implements OnInit {
+  /** グローバル定数 */
   readonly cst: any = Constant
   isNavCollapsed: any = true
 

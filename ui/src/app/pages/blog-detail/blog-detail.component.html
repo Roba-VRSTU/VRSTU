@@ -1,1 +1,29 @@
-<p>blog-detail works!</p>
+<div *ngIf="post" class="jumbotron jumbotron-fluid mb-5 post-title">
+  <div class="container">
+    <h1>{{post.fields.title}}</h1>
+    <div class="meta-info">
+      <span>
+        {{'label.createdAt' | translate}} :
+        {{post.fields.created_at | date: cst.DATETIME_FORMAT}}
+      </span>
+      <span>
+        {{'label.updatedAt' | translate}} :
+        {{post.fields.updated_at | date: cst.DATETIME_FORMAT}}
+      </span>
+    </div>
+    <div class="description">
+      {{post.fields.description}}
+    </div>
+  </div>
+</div>
+<div *ngIf="post" class="container">
+  <div class="row">
+    <div class="col">
+      <article>
+        <markdown ngPreserveWhitespaces lineNumbers emoji>
+          {{post.fields.content}}
+        </markdown>
+      </article>
+    </div>
+  </div>
+</div>

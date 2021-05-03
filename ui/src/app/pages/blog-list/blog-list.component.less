@@ -1,0 +1,82 @@
+@import 'src/variables';
+
+@border-width: 1px;
+@box-size: 100%;
+
+.post-card-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: @color-black-100;
+  cursor: pointer;
+
+  &::before {
+    width: 0px;
+    height: @border-width;
+    right: -1px;
+    bottom: -1px;
+  }
+
+  &::after {
+    width: 0px;
+    height: @border-width;
+    top: -1px;
+    left: -1px;
+  }
+
+  .post-card {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    padding-bottom: 0.2rem;
+
+    p {
+      margin-bottom: 0;
+      text-align: justify;
+      text-indent: 1rem;
+      color: @color-black-050;
+      transition: all 0.3s;
+    }
+    &::after {
+      width: @border-width;
+      height: 0px;
+      left: -1px;
+      top: 0px;
+    }
+
+    &::before {
+      width: @border-width;
+      height: 0px;
+      bottom: 0px;
+      right: -1px;
+    }
+  }
+}
+
+.post-card-link::after,
+.post-card-link::before,
+.post-card::after,
+.post-card::before {
+  display: block;
+  position: absolute;
+  content: '';
+  background-color: @color-black-100;
+  transition: all 0.3s ease;
+}
+
+.post-card-link:hover .post-card {
+  p {
+    color: @color-black-100;
+    transition: all 0.3s;
+  }
+}
+
+.post-card-link:hover::after,
+.post-card-link:hover::before {
+  width: @box-size;
+  width: calc(@box-size + 1px);
+}
+.post-card-link:hover .post-card::after,
+.post-card-link:hover .post-card::before {
+  height: @box-size;
+  height: calc(@box-size + 1px);
+}

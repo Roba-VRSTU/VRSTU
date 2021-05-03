@@ -9,4 +9,6 @@ export const environment = {
   defaultLang: 'ja',
   /** コピーライト */
   copyright: '2016 vrstu.net',
+  /** API の URL */
+  apiUrl: 'https://localhost/api',
 }

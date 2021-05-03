@@ -1,1 +1,17 @@
-<p>blog-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li *ngFor="let post of posts">
+          <a class="post-card-link" [routerLink]="['/' + cst.ROUTER_BLOG_POST_URL, post.id]">
+            <div class="post-card">
+              <h4>{{post.title}}</h4>
+              <div class="meta-info">{{post.created_at | date: cst.DATETIME_FORMAT}}</div>
+              <p *ngIf="post.description">{{post.description}}</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

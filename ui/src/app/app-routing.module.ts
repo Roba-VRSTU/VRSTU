@@ -15,7 +15,7 @@ const routes: Routes = [
     children: [
       { path: Constant.ROUTER_ROOT_URL, component: HomeComponent },
       { path: Constant.ROUTER_BLOG_LIST_URL, component: BlogListComponent },
-      { path: Constant.ROUTER_BLOG_BLOG_URL, component: BlogDetailComponent },
+      { path: Constant.ROUTER_BLOG_POST_URL + '/:id', component: BlogDetailComponent },
     ],
   },
   // { path: Constant.ROUTER_BLOG_URL },

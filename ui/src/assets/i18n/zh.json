@@ -6,5 +6,9 @@
   "lang": {
     "ja": "日本語",
     "zh": "中文"
+  },
+  "label": {
+    "createdAt": "发表于",
+    "updatedAt": "最后修改于"
   }
 }
