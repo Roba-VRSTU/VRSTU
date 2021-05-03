@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core import serializers
 from django.http import JsonResponse
 import json
@@ -21,8 +22,10 @@ def get_categories(request):
     categories = Category.objects.filter(is_published=True).order_by('sort')
     categories_json = json.loads(serializers.serialize('json', categories))
     result = list(map(format_result, categories_json))
+    response = JsonResponse(result, safe=False)
+    add_response_header(response)
 
-    return JsonResponse(result, safe=False)
+    return response
 
 
 def get_posts(request):
@@ -42,8 +45,10 @@ def get_posts(request):
         .order_by('sort', '-created_at')
     posts_json = json.loads(serializers.serialize('json', posts))
     result = list(map(format_post_list, posts_json))
+    response = JsonResponse(result, safe=False)
+    add_response_header(response)
 
-    return JsonResponse(result, safe=False)
+    return response
 
 
 def get_post(request, post_id):
@@ -63,8 +68,24 @@ def get_post(request, post_id):
     """
     post = Post.objects.filter(is_published=True).get(pk=post_id)
     post_json = json.loads(serializers.serialize('json', [post]))
+    response = JsonResponse(post_json, safe=False)
+    add_response_header(response)
 
-    return JsonResponse(post_json, safe=False)
+    return response
+
+
+def add_response_header(rsp):
+    """レスポンスにヘッダー情報を追加
+
+    Parameters
+    ----------
+    rsp : JsonResponse
+        JSON レスポンス
+    """
+    rsp['Access-Control-Allow-Origin'] = settings.CORS_DOMAIN
+    rsp['Access-Control-Allow-Credentials'] = 'true'
+    rsp['Access-Control-Allow-Headers'] = "Content-Type, Accept"
+    rsp['Access-Control-Allow-Methods'] = "GET, POST, OPTIONS"
 
 
 def format_result(result: dict) -> dict:
@@ -106,6 +127,8 @@ def format_post_list(result: dict) -> dict:
     format_result = {}
     format_result.update(
         id=result['pk'],
+        description=result['fields']['description'],
+        title=result['fields']['title'],
         alias=result['fields']['alias'],
         created_at=result['fields']['created_at'],
         updated_at=result['fields']['updated_at'],

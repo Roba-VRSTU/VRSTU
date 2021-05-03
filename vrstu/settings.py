@@ -144,3 +144,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_NAME = env('SITE_NAME')
 
 ADMIN_URL = env('ADMIN_URL')
+
+CORS_DOMAIN = env('CORS_DOMAIN')
