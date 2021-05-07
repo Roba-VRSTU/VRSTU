@@ -10,5 +10,17 @@
   "label": {
     "createdAt": "作成日",
     "updatedAt": "最終更新日"
+  },
+  "onemax": {
+    "ga": "遺伝的アルゴリズム",
+    "fs": "全探索",
+    "sequenceSize": "数列サイズ",
+    "executionTime": "実行時間",
+    "initSolutionEval": "初期解評価値",
+    "bestSolutionEval": "最適解評価値",
+    "evalTimes": "評価回数",
+    "populationNum": "世帯数",
+    "title": "OneMax 問題",
+    "seconds": "秒"
   }
 }

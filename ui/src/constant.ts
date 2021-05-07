@@ -27,4 +27,13 @@ export class Constant {
   static readonly ROUTER_BLOG_LIST_URL: string = 'blog'
   /** Blog 投稿詳細 */
   static readonly ROUTER_BLOG_POST_URL: string = 'blog/post'
+
+  /** コンポーネントタイプ（OneMax GA） */
+  static readonly ONEMAX_TYPE_GA: string = 'ONEMAX_GA'
+  /** コンポーネントタイプ（OneMax FS） */
+  static readonly ONEMAX_TYPE_FS: string = 'ONEMAX_FS'
+  /** 初期化完了 */
+  static readonly INIT_COMPLETED: string = 'INIT_COMP'
+  /** 処理完了 */
+  static readonly EXEC_COMPLETED: string = 'EXEC_COMP'
 }

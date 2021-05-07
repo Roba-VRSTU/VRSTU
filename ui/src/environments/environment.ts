@@ -15,6 +15,8 @@ export const environment = {
   copyright: '2016 vrstu.net',
   /** API の URL */
   apiUrl: 'http://localhost:8000/api',
+  /** 言語パッケージのベース URL */
+  i18nBaseUrl: '',
 }
 
 /*

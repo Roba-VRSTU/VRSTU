@@ -1,3 +1,100 @@
 <div class="container">
-  Home!
+  <div class="row">
+    <div class="col-6 py-5">
+      <app-onemax-ga [execFlg]="execStartFlg" [geneEleSize]="pointEleSize" [geneRow]="pointRows"
+        (updateInfo)="onUpdateInfo($event)"></app-onemax-ga>
+    </div>
+    <div class="col-6 py-5">
+      <app-onemax-fs [execFlg]="execStartFlg" [pointEleSize]="pointEleSize" [pointRow]="pointRows"
+        (updateInfo)="onUpdateInfo($event)"></app-onemax-fs>
+    </div>
+  </div>
+  <div class="row onemax-meta-info-title">
+    <div class="col-5">
+      <h1 class="text-right">{{'onemax.ga' | translate}}</h1>
+    </div>
+    <div class="col-2">
+      <h1 class="text-center">VS</h1>
+    </div>
+    <div class="col-5">
+      <h1 class="text-left">{{'onemax.fs' | translate}}</h1>
+    </div>
+  </div>
+  <div class="row onemax-meta-info">
+    <div class="col-5 text-right">
+      {{sequenceSizeGA}}
+      <i-bs name="caret-left-fill"></i-bs>
+    </div>
+    <div class="col-2 text-center">
+      {{'onemax.sequenceSize' | translate}}
+    </div>
+    <div class="col-5 text-left">
+      <i-bs name="caret-right-fill"></i-bs>
+      {{sequenceSizeFS}}
+    </div>
+  </div>
+  <div class="row onemax-meta-info">
+    <div class="col-5 text-right">
+      {{execTimeGA}} {{'onemax.seconds' | translate}}
+      <i-bs name="caret-left-fill"></i-bs>
+    </div>
+    <div class="col-2 text-center">
+      {{'onemax.executionTime' | translate}}
+    </div>
+    <div class="col-5 text-left">
+      <i-bs name="caret-right-fill"></i-bs>
+      {{execTimeFS}} {{'onemax.seconds' | translate}}
+    </div>
+  </div>
+  <div class="row onemax-meta-info">
+    <div class="col-5 text-right">
+      {{firstFitnessGA}}
+      <i-bs name="caret-left-fill"></i-bs>
+    </div>
+    <div class="col-2 text-center">
+      {{'onemax.initSolutionEval' | translate}}
+    </div>
+    <div class="col-5 text-left">
+      <i-bs name="caret-right-fill"></i-bs>
+      {{firstFitnessFS}}
+    </div>
+  </div>
+  <div class="row onemax-meta-info">
+    <div class="col-5 text-right">
+      {{bestFitnessGA}}
+      <i-bs name="caret-left-fill"></i-bs>
+    </div>
+    <div class="col-2 text-center">
+      {{'onemax.bestSolutionEval' | translate}}
+    </div>
+    <div class="col-5 text-left">
+      <i-bs name="caret-right-fill"></i-bs>
+      {{bestFitnessFS}}
+    </div>
+  </div>
+  <div class="row onemax-meta-info">
+    <div class="col-5 text-right">
+      {{evalTimesGA}}
+      <i-bs name="caret-left-fill"></i-bs>
+    </div>
+    <div class="col-2 text-center">
+      {{'onemax.evalTimes' | translate}}
+    </div>
+    <div class="col-5 text-left">
+      <i-bs name="caret-right-fill"></i-bs>
+      {{evalTimesFS}}
+    </div>
+  </div>
+  <div class="row onemax-meta-info">
+    <div class="col-5 text-right">
+      {{populationNum}}
+      <i-bs name="caret-left-fill"></i-bs>
+    </div>
+    <div class="col-2 text-center">
+      {{'onemax.populationNum' | translate}}
+    </div>
+    <div class="col-5 text-left">
+    </div>
+  </div>
+
 </div>

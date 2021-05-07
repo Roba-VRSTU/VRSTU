@@ -59,7 +59,7 @@ export class I18nModule {
 }
 
 export function httpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(httpClient)
+  return new TranslateHttpLoader(httpClient, environment.i18nBaseUrl + '/assets/i18n/', '.json')
 }
 
 export function translateCacheFactory(
