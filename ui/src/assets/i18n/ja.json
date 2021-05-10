@@ -20,6 +20,8 @@
     "bestSolutionEval": "最適解評価値",
     "evalTimes": "評価回数",
     "populationNum": "世帯数",
+    "mutationProb": "突然変異確率",
+    "mutationTimes": "突然変異回数",
     "title": "OneMax 問題",
     "seconds": "秒"
   }

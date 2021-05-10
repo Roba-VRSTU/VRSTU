@@ -26,6 +26,8 @@ export class OnemaxGaComponent implements OnInit, AfterViewInit, AfterViewChecke
   readonly populationSize: number = 80
   /** 突然変異確率 */
   readonly mutationProb: number = 0.01
+  /** 突然変異回数 */
+  mutationTimes: number = 0
   /** 染色体が持つ遺伝子の数 */
   geneSize: number = 0
   /** 表示用の個体 */
@@ -95,7 +97,7 @@ export class OnemaxGaComponent implements OnInit, AfterViewInit, AfterViewChecke
     this.initVisualization()
     // 画面初期化完了
     setTimeout(() => {
-      this.emitInfo({ status: Constant.INIT_COMPLETED, size: this.geneSize })
+      this.emitInfo({ status: Constant.INIT_COMPLETED, size: this.geneSize, mutationProb: this.mutationProb })
     }, this.initTime * 1000)
   }
 
@@ -233,7 +235,7 @@ export class OnemaxGaComponent implements OnInit, AfterViewInit, AfterViewChecke
     }
     // 突然変異
     if (Math.random() <= this.mutationProb) {
-      console.log('11111111')
+      this.emitInfo({ mutationTimes: ++this.mutationTimes })
       const idx: number = Math.floor(Math.random() * this.geneSize)
       if (Math.floor(Math.random() * 2) === 0) {
         a.chromosomes[idx] = a.chromosomes[idx] === 1 ? 0 : 1

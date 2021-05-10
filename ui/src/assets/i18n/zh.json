@@ -10,5 +10,19 @@
   "label": {
     "createdAt": "发表于",
     "updatedAt": "最后修改于"
+  },
+  "onemax": {
+    "ga": "遗传算法",
+    "fs": "全搜索",
+    "sequenceSize": "数列长度",
+    "executionTime": "执行时间",
+    "initSolutionEval": "最初解评价值",
+    "bestSolutionEval": "最优解评价值",
+    "evalTimes": "评价次数",
+    "populationNum": "迭代次数",
+    "mutationProb": "基因突变率",
+    "mutationTimes": "基因突变次数",
+    "title": "OneMax 问题",
+    "seconds": "秒"
   }
 }

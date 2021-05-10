@@ -33,6 +33,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   sequenceSizeGA: number = 0
   /** GA 世帯数 */
   populationNum: number = 0
+  /** GA 突然変異確率 */
+  mutationProb: number = 0
+  /** GA 突然変異回数 */
+  mutationTimes: number = 0
   /* ----- FS の各種評価値 ------------------------------------------------------- */
   /** FS 実行時間 */
   execTimeFS: number = 0
@@ -63,6 +67,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (info.status === Constant.INIT_COMPLETED) {
         this.initCompletedNum += 1
         this.sequenceSizeGA = info.size
+        this.mutationProb = info.mutationProb
       } else if (info.status === Constant.EXEC_COMPLETED) {
         this.execCompletedGA = !this.execCompletedGA
       } else {
@@ -77,6 +82,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
         if ('populationNum' in info) {
           this.populationNum = info.populationNum
+        }
+        if ('mutationTimes' in info) {
+          this.mutationTimes = info.mutationTimes
         }
       }
     } else {
