@@ -2,10 +2,12 @@
   <div class="container d-flex justify-content-between">
     <span class="copyright">
       &copy; {{env.copyright}}
+      {{'label.poweredBy' | translate}}
+      <a href="mailto:{{env.mailTo}}">{{env.poweredBy}}</a>
     </span>
     <span>
       <!-- 言語選択ドロップダウン -->
-      <div ngbDropdown>
+      <!-- div ngbDropdown>
         <a class="btn btn-link" ngbDropdownToggle>
           {{'lang.' + translate.currentLang | translate}}
         </a>
@@ -16,7 +18,7 @@
             </button>
           </ng-container>
         </div>
-      </div>
+      </div -->
     </span>
   </div>
 </footer>

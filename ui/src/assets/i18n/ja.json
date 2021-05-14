@@ -9,7 +9,8 @@
   },
   "label": {
     "createdAt": "作成日",
-    "updatedAt": "最終更新日"
+    "updatedAt": "最終更新日",
+    "poweredBy": "Prowered By "
   },
   "onemax": {
     "ga": "遺伝的アルゴリズム",

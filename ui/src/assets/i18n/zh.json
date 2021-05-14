@@ -9,7 +9,8 @@
   },
   "label": {
     "createdAt": "发表于",
-    "updatedAt": "最后修改于"
+    "updatedAt": "最后修改于",
+    "poweredBy": "Prowered By "
   },
   "onemax": {
     "ga": "遗传算法",
