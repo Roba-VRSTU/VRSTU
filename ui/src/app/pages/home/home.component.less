@@ -1,3 +1,5 @@
+@import 'src/variables';
+
 .onemax-meta-info-title {
   margin-bottom: 0.5rem;
 }
@@ -7,5 +9,22 @@
 
   .text-center {
     font-weight: bold;
+  }
+}
+
+.onemax-subtitle {
+  h1 {
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+
+    &:before,
+    &:after {
+      content: '';
+      flex-grow: 1;
+      height: 1px;
+      background: @color-black-100;
+      margin: 0 1rem;
+    }
   }
 }
