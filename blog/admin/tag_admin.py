@@ -1,11 +1,8 @@
 from django.contrib import admin
 
-from blog.admin.categories_posts_inline import CategoriesPostsInline
-from blog.admin.tags_posts_inline import TagsPostsInline
 
-
-class PostAdmin(admin.ModelAdmin):
-    """投稿管理
+class TagAdmin(admin.ModelAdmin):
+    """カテゴリー管理
 
     Parameters
     ----------
@@ -15,27 +12,21 @@ class PostAdmin(admin.ModelAdmin):
 
     # 一覧画面の表示カラム
     list_display = [
-        'title',
-        'get_all_categories',
-        'view_count',
-        'good_count',
-        'lang',
+        'name',
         'sort',
         'is_published',
+        'lang',
         'created_at',
-        'updated_at',
-        'author']
+        'updated_at']
     # 一覧画面のフィルターに表示するカラム
     list_filter = [
         'lang',
-        'is_published',
-        'categories']
+        'is_published']
     # 詳細画面の表示情報
     fieldsets = [
         (None, {
             'fields': [
-                'title',
-                'content',
+                'name',
                 'lang',
                 'author',
                 'sort',
@@ -43,9 +34,9 @@ class PostAdmin(admin.ModelAdmin):
                 'is_published'],
         }),
         ('SEO', {
-            'classes': ('collapse',),
-            'fields': ['description', 'keywords'],
+            'classes': ['collapse'],
+            'fields': [
+                'description',
+                'keywords'],
         }),
     ]
-    # 所属カテゴリーの表示
-    inlines = (CategoriesPostsInline, TagsPostsInline)

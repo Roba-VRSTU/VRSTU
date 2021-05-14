@@ -4,6 +4,7 @@ from blog.constants import DB_TBL
 from blog.models.status_set import StatusSet
 from blog.models.seo_set import SEOSet
 from blog.models.category import Category
+from blog.models.tag import Tag
 
 
 class Post(StatusSet, SEOSet):
@@ -29,6 +30,9 @@ class Post(StatusSet, SEOSet):
     # カテゴリー
     categories = models.ManyToManyField(
         Category, through='CategoriesPosts')
+    # タグ
+    tags = models.ManyToManyField(
+        Tag, through='TagsPosts')
     # 概要
     overview = models.TextField(
         '概要',
@@ -48,6 +52,10 @@ class Post(StatusSet, SEOSet):
     # 所属された全てのカテゴリーをカンマ区切りの文字列で取得
     def get_all_categories(self):
         return ','.join([category.name for category in self.categories.all()])
+
+    # 全てのタグをカンマ区切りの文字列で取得
+    def get_all_tags(self):
+        return ','.join([tag.name for tag in self.tags.all()])
 
     get_all_categories.short_description = 'カテゴリー'
 
