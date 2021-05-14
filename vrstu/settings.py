@@ -60,7 +60,7 @@ ROOT_URLCONF = 'vrstu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['vrstu/templates/'],
+        'DIRS': [env('TEMPLATE_DIR')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
