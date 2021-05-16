@@ -2,10 +2,15 @@
 
 MODE=$1
 
-if [ "$MODE" = "build" ]; then
+if [ "$MODE" = "init" ]; then
+  # ビルド
+  cd ui
+  npm install
+elif [ "$MODE" = "build" ]; then
   # ビルド
   cd ui
   npm run-script build -- --prod
+
 elif [ "$MODE" = "deploy" ]; then
   # デプロイ
   cd ui
