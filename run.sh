@@ -6,7 +6,7 @@ if [ "$MODE" = "build" ]; then
   # ビルド
   cd ui
   npm run-script build -- --prod
-elif  "$MODE" = "deploy" ]; then
+elif [ "$MODE" = "deploy" ]; then
   # デプロイ
   cd ui
   npm run-script build -- --prod
