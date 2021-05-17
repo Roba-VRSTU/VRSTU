@@ -32,10 +32,8 @@ export class BlogDetailComponent implements OnInit {
       this.tfs.getData(url).subscribe((data: any) => {
         this.post = data[0]
         this.ttls.setTitle(`${this.post.fields.title} | ${environment.siteTitle}`)
-        this.mts.addTags([
-          { name: 'keywords', content: this.post.fields.keywords },
-          { name: 'description', content: this.post.fields.description },
-        ])
+        this.mts.updateTag({ name: 'keywords', content: this.post.fields.keywords })
+        this.mts.updateTag({ name: 'description', content: this.post.fields.description })
         console.log(this.post)
       })
     })
