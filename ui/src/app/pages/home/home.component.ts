@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
+import { Title } from '@angular/platform-browser'
 
 import { Constant } from 'src/constant'
+import { environment } from 'src/environments/environment'
 
 @Component({
   selector: 'app-home',
@@ -53,9 +55,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   /** タイマー */
   intervalTimer: any = null
 
-  constructor() {}
+  constructor(private ttls: Title) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ttls.setTitle(environment.siteTitle)
+  }
 
   ngOnDestroy(): void {
     clearInterval(this.intervalTimer)

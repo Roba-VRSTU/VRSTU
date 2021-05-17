@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { Title } from '@angular/platform-browser'
+import { TranslateService } from '@ngx-translate/core'
 
 import { HttpTransferService } from 'src/app/services/http-transfer.service'
 import { Constant } from 'src/constant'
@@ -17,12 +19,14 @@ export class BlogListComponent implements OnInit {
   /** 投稿一覧 */
   posts: any = null
 
-  constructor(private tfs: HttpTransferService) {}
+  constructor(private ttls: Title, private tsls: TranslateService, private tfs: HttpTransferService) {}
 
   ngOnInit(): void {
     // tslint:disable-next-line: deprecation
     this.tfs.getData('/blog/posts/').subscribe((data: any) => {
       this.posts = data
+      const blogTitle = this.tsls.instant('nav.blog')
+      this.ttls.setTitle(`${blogTitle} | ${environment.siteTitle}`)
       console.log(this.posts)
     })
   }
