@@ -18,8 +18,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path, re_path
 
-from vrstu.constants import API_BASE_URL
+from vrstu.constants import API_BASE_URL, ADMIN_SITE_TITLE, ADMIN_INDEX_TITLE
 from vrstu import views
+
+admin.site.site_header = '%s %s %s' % (
+    settings.SITE_NAME, settings.VERSION, ADMIN_SITE_TITLE)
+
+admin.site.index_title = ADMIN_INDEX_TITLE
 
 urlpatterns = [
     path(settings.ADMIN_URL + '/', admin.site.urls),
